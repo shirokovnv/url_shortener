@@ -35,5 +35,8 @@ down: ## Destroy all running containers
 fix: ## Execute formatter
 	$(dc_bin) run --user "0:0" --no-deps phoenix mix format
 
+bench: ## Benchmarks
+	sh ./ab/ab.sh
+
 pull: ## Pull latest images
 	$(dc_bin) pull
