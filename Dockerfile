@@ -8,7 +8,6 @@
 # This file is based on these images:
 #
 #   - https://hub.docker.com/r/hexpm/elixir/tags - for the build image
-#   - https://hub.docker.com/_/debian?tab=tags&page=1&name=bullseye-20210902-slim - for the release image
 #   - https://pkgs.org/ - resource for finding needed packages
 #   - Ex: hexpm/elixir:1.12.0-erlang-24.0.1-debian-bullseye-20210902-slim
 #
@@ -23,8 +22,8 @@ ARG APP_PORT=4000
 
 FROM ${BUILDER_IMAGE} as builder
 
-# install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git \
+# Install build dependencies
+RUN apt-get update -y && apt-get install -y build-essential git postgresql-client \
     && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # Create app directory and copy the Elixir projects into it
@@ -32,9 +31,12 @@ RUN mkdir /app
 COPY . /app
 WORKDIR /app
 
-# install hex + rebar
+# Install hex + rebar
 RUN mix local.hex --force && \
     mix local.rebar --force
+
+# Install mix dependencies
+RUN mix deps.get
 
 # Compile the project
 RUN mix compile

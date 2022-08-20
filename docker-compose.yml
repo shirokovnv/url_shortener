@@ -1,5 +1,5 @@
 # Version of docker-compose.
-version: '3'
+version: "3"
 
 # Containers we're going to run.
 services:
@@ -13,16 +13,20 @@ services:
       # Variables to connect to our Postgres server.
       PGUSER: postgres
       PGPASSWORD: postgres
-      PGDATABASE: database_name
+      PGDATABASE: url_shortener_dev
       PGPORT: 5432
       # Hostname of our Postgres container.
       PGHOST: db
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container.
-      - '4000:4000'
+      - "4000:4000"
+    volumes:
+      - .:/app:rw
+
     depends_on:
       # The DB container needs to be started before we start this container.
       - db
+
   db:
     # We use the predefined Postgres image.
     image: postgres:12
@@ -35,6 +39,7 @@ services:
     restart: always
     volumes:
       - pgdata:/var/lib/postgresql/data
+
 # Define the volumes.
 volumes:
   pgdata:
