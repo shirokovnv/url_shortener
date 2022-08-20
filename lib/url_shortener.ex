@@ -23,7 +23,7 @@ defmodule UrlShortener do
   }
   ```
 
-  **Follow short URL request***
+  **Follow short URL request**
 
   ```
   curl --location --request GET 'http://localhost:4000/2bU'
