@@ -6,10 +6,10 @@ docker_bin := $(shell command -v docker 2> /dev/null)
 
 SHELL = /bin/sh
 
-.PHONY : help install \
+.PHONY : help init \
          shell test \
-         up down \
-         pull fix \
+         up down fix \
+         pull
 .SILENT : help
 .DEFAULT_GOAL : help
 
@@ -20,7 +20,7 @@ help: ## Show this help
 shell: ## Start shell into phoenix container
 	$(dc_bin) run $(DC_RUN_ARGS) phoenix sh
 
-install: ## Install all app dependencies
+init: ## Install all app dependencies
 	$(dc_bin) run $(DC_RUN_ARGS) --no-deps phoenix mix deps.get
 
 test: ## Execute app tests

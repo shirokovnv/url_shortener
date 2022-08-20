@@ -10,6 +10,7 @@ config :url_shortener, UrlShortener.Repo,
   password: "postgres",
   hostname: "localhost",
   database: "url_shortener_test#{System.get_env("MIX_TEST_PARTITION")}",
+  port: 5432,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
