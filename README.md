@@ -28,7 +28,7 @@ For another commands see `make help`.
 
 There are two API methods:
 
-1. Shorten a long URL by getting an incremental counter and converting it to a base62 format.
+1. Shorten a long URL by getting an incremental counter and converting it to base62 format.
 
    ```
    curl --location --request POST 'http://localhost:4000/' \
@@ -55,7 +55,7 @@ There are two API methods:
    curl --location --request GET 'http://localhost:4000/2bU'
    ```
 
-   **You will be redirected to the previously stored long URL**
+   **You will be redirected to the previously stored long URL**.
 
 ## Benchmarks
 
