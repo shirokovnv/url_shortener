@@ -26,7 +26,7 @@ For another commands see `make help`.
 
 ## Howitworks
 
-The application provides two API methods:
+There are two API methods:
 
 1. Shorten a long URL by getting an incremental counter and converting it to a base62 format.
 
@@ -38,9 +38,9 @@ The application provides two API methods:
        "long_url": "https://example.com"
      }'
    ```
-
-   `It responds with:`
-
+   
+   **It responds with:**
+   
    ```
    {
      "short_url": "http://localhost:4000/2bU"
@@ -49,19 +49,19 @@ The application provides two API methods:
 
 2. Reading short URL and redirecting to the matched long URL.
 
-   `Just follow the link builded in step 1:`
+   **Just follow the link builded in step 1:**
 
    ```
    curl --location --request GET 'http://localhost:4000/2bU'
    ```
 
-   `You will be redirected to the previously stored long URL`
+   **You will be redirected to the previously stored long URL**
 
 ## Benchmarks
 
 Run `make bench` for benchmarking tests.
 
-Thats literally it. Good job :)
+### Thats literally it. Good job :)
 
 [link-ci]: https://github.com/shirokovnv/url_shortener/actions/workflows/ci.yml/badge.svg
 [link-phx]: https://www.phoenixframework.org/
