@@ -6,6 +6,7 @@ config :url_shortener, UrlShortener.Repo,
   password: "postgres",
   hostname: "localhost",
   database: "url_shortener_dev",
+  port: 5432,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
