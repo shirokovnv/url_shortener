@@ -28,7 +28,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 **There are two API methods:**
 
-1. Shorten a long URL by getting an incremental counter and converting it to base62 format.
+_Shorten a long URL_ by getting an incremental counter and converting it to base62 format.
 
    ```
    curl --location --request POST 'http://localhost:4000/' \
@@ -47,9 +47,9 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
    }
    ```
 
-2. Reading short URL and redirecting to the matched long URL.
+_Reading short URL_ and redirecting to the matched long URL.
 
-   **Just follow the link builded in step 1:**
+   **Just follow the link builded from previous step:**
 
    ```
    curl --location --request GET 'http://localhost:4000/2bU'
