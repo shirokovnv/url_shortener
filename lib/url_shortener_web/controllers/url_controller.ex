@@ -30,7 +30,7 @@ defmodule UrlShortenerWeb.UrlController do
 
   defp fetch_and_cache_url!(id) do
     url = Links.get_url!(id)
-    Cachex.put(:url_cache, id, url.long_url, ttl: :timer.hours(@expired_interval))
+    Cachex.put(:url_cache, id, url.long_url, ttl: :timer.seconds(@expired_interval))
 
     url.long_url
   end
