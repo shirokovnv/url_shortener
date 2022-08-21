@@ -4,15 +4,16 @@
 
 **Oh, no! Another URL shortener app.**
 
-## Prerequisites
+## Dependencies
 
-The application uses [Phoenix][link-phx] as a framework and [PostgreSQL][link-pgsql] as a persistent storage.
+* [Docker][link-docker]
+* [Make][link-make]
+* [Phoenix framework][link-phx]
+* [PostgreSQL][link-pgsql]
 
-To run the containers application uses [docker][link-docker] and [make][link-make].
+## Project setup
 
-## Configuration and booting
-
-From the project root, inside the shell, run:
+**From the project root, inside shell, run:**
 
 - `make pull` to pull latest images
 - `make init` to install fresh dependencies
@@ -20,15 +21,14 @@ From the project root, inside the shell, run:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-To extinguish running containers type `make down`.
-
-For another commands see `make help`.
+* `make down` - to extinguish running containers
+* `make help` - for additional commands
 
 ## Howitworks
 
-There are two API methods:
+**There are two API methods:**
 
-1. Shorten a long URL by getting an incremental counter and converting it to base62 format.
+_Shorten a long URL_ by getting an incremental counter and converting it to base62 format.
 
    ```
    curl --location --request POST 'http://localhost:4000/' \
@@ -47,9 +47,9 @@ There are two API methods:
    }
    ```
 
-2. Reading short URL and redirecting to the matched long URL.
+_Reading short URL_ and redirecting to the matched long URL.
 
-   **Just follow the link builded in step 1:**
+   **Just follow the link builded from previous step:**
 
    ```
    curl --location --request GET 'http://localhost:4000/2bU'
