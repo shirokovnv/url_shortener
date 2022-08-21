@@ -41,6 +41,8 @@ RUN mix deps.get
 # Compile the project
 RUN mix compile
 
+# Expose the App port
 EXPOSE ${APP_PORT}
 
+# Set the entrypoint
 CMD ["/app/entrypoint.sh"]
