@@ -15,7 +15,9 @@ defmodule UrlShortener.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: UrlShortener.PubSub},
       # Start the Endpoint (http/https)
-      UrlShortenerWeb.Endpoint
+      UrlShortenerWeb.Endpoint,
+      # Start app cache
+      {Cachex, name: :url_cache}
       # Start a worker by calling: UrlShortener.Worker.start_link(arg)
       # {UrlShortener.Worker, arg}
     ]
