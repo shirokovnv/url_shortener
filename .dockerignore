@@ -1,5 +1,3 @@
-.dockerignore
-
 # The directory Mix will write compiled artifacts to.
 /_build/
 
@@ -25,5 +23,3 @@ erl_crash.dump
 url_shortener-*.tar
 
 Makefile
-
-/ab/
