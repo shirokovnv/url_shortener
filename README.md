@@ -63,6 +63,10 @@ Run `make bench` for benchmarking tests.
 
 ### Thats literally it. Good job :)
 
+## License
+
+MIT. Please see the [license file](LICENSE.md) for more information.
+
 [link-ci]: https://github.com/shirokovnv/url_shortener/actions/workflows/ci.yml/badge.svg
 [link-phx]: https://www.phoenixframework.org/
 [link-pgsql]: https://www.postgresql.org/
