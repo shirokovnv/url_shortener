@@ -49,7 +49,7 @@ _Shorten a long URL_ by getting an incremental counter and converting it to base
 
 _Reading short URL_ and redirecting to the matched long URL.
 
-   **Just follow the link builded from previous step:**
+   **Just follow the link builded from the previous step:**
 
    ```
    curl --location --request GET 'http://localhost:4000/2bU'
